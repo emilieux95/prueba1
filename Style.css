@@ -1,0 +1,843 @@
+/*Hacemos el reset inicial	#F9EBC7*/ /* */
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+/* -------------------------------------------MODALBIENVENIDA------------------------------------------- */
+/*aqui damos formato al modal*/
+
+#modalBienvenida{
+	/*vw y vh para darle el ancho y alto total de su ventana*/
+	width: 100vw; 
+	height: 100vh;
+	background-color: rgba(0,0,0,0.6);
+	position:fixed;
+	display: none;
+	z-index: 5;
+}
+
+#modaleBoxB{
+	width: 800px;
+	height: 400px;
+	background-color: lightgrey;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding: 50px;
+	text-align: center;
+	border-radius:25px;
+}
+#modaleBoxB>h1{
+	font-size: 4rem;
+	font-family: "Lobster", sans-serif;
+	font-weight: normal;
+	color: grey;
+	margin-top: 0px;
+}
+
+#modaleBoxB>button {
+	font-family: "Lobster", sans-serif;
+	font-size: 2rem;
+	padding: 20px 40px;
+	border-radius: 10px;
+	margin-top: 40px;
+	background-color: grey;
+	color: lightgrey;
+	transition-duration: 0.4s;
+}
+
+#modaleBoxB>button:hover {
+	
+	color: grey;
+	background-color: #F9EBC7; 
+	cursor: pointer;
+}
+/* -------------------------------------------ENCABEZADO------------------------------------------- */
+/*Nos ponemos con el encabezado con sus respectivas id y class y sus formatos*/
+#encabezado{
+
+	height: 1000px;
+	width: 100%;
+	
+	
+}
+
+/* Aqui tenemos el Slideshow o fondo */
+.fondoSlide{
+	height: 1000px;
+	width: 100%;
+	background-size: cover;
+	position: absolute;
+}
+#fondoSlide1{
+	/* utilizamos ../ para ir a la ubicacion por encima del css, es decir, subimos para la carpeta Imagenes */
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../Imagenes/HeroImage.png);
+	z-index: 3;
+}
+#fondoSlide2{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../Imagenes/Slideshow2.png);
+	z-index: 2;
+}
+#fondoSlide3{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../Imagenes/Slideshow3.png);
+	z-index: 1;
+}
+body {
+	overflow-x: hidden;
+}
+.mainSlide{
+	animation-name: mainSlideAnim;
+	animation-iteration-count: 1;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+.nextSlide{
+	animation-name: nextSlideAnim;
+	animation-iteration-count: 1;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+.hiddenSlide{
+	display: none;
+}
+
+
+@keyframes mainSlideAnim {
+	0%{margin-left: 0%}
+	100%{margin-left: -100%}
+
+}
+@keyframes nextSlideAnim {
+	0%{margin-left: 100%}
+	100%{margin-left: 0%}
+
+}
+
+#tituloEncabezado{
+
+	font-family: "Flamenco", system-ui;
+	font-size: 9rem;
+	color: #E7DBCB;
+	text-shadow: 3px 6px 12px rgba(0, 0, 0, 0.8);/*sobreado*/
+	/*background-color: #F9EBC7;*/
+	text-align: center;
+	position: relative;
+	top: 290px;
+	animation-name:tituloFundido;
+	animation-duration:2s;
+	z-index: 4;
+}
+
+#subtituloEncabezado{
+	font-family: "Asap", sans-serif;
+	font-size: 3.5rem;
+	color: #E7DBCB;
+	text-shadow: 3px 6px 12px rgba(0, 0, 0, 0.8);/*sobreado*/
+	font-weight: normal;
+	/*background-color: #F9EBC7;*/
+	text-align: center;
+	position: relative;
+	top: 300px;
+	opacity: 0;
+	animation-name:subtituloFundido;
+	animation-duration:4s;
+	animation-delay: 1.25s;
+	animation-fill-mode: forwards;
+	z-index: 4;
+
+}
+
+#logo{
+
+	width: auto;
+	height: 100%;
+	float:left;
+	margin-left: 100px;
+	display: block;
+	padding: 10px;
+	transition-property: padding;
+	transition-duration: 1s;
+	
+}
+
+
+
+#navbar{
+
+	height: 120px;
+	width: 100%;
+	background-image: linear-gradient(to top left, #0000, grey);
+	position: fixed; /*para quedarse estatico*/
+	z-index: 5; /*para que el titulo y subtitulo no este encima de este elemento*/
+	top: 0;
+	font-size: 1.5rem;
+	transition-property: top, height, font-size;
+	transition-duration: 1s;
+}
+
+
+#menu{
+
+	list-style: none;
+	width: auto;
+	overflow: hidden;
+	float: right;
+	margin-right: 70px;
+	line-height: 100px;
+	transition-property: line-height;
+	transition-duration: 1s;
+}
+
+.elementoMenu{
+
+	float: left;
+	margin: 0px 25px;
+	
+}
+
+.elementoMenu>a{
+	font-family: "Flamenco", system-ui;
+	color: white;
+	/*font-size: 1.5rem;*/
+	text-decoration: none; /*quitar subrayado por defecto*/
+	transition-duration: 0.4s ;
+	transition-property: color;
+
+}
+
+.elementoMenu>a:hover{
+
+	color:#99525E;
+	
+}
+/*aqui empieza en submenu*/
+#submenu{
+	width: auto;
+	height: auto;
+	list-style: none;
+	position: absolute;
+	top: 80px;
+	z-index: 1;
+	display: none;
+	font-size: 1.3rem;
+	line-height: 20px;
+	background-image: linear-gradient(to bottom, #0000, rgba(0,0,0,0.1));
+	transition-property: height, font-size, top;
+	transition-duration:1s;
+	
+}
+
+.elemSubmenu{
+	width: 100%;
+	height: 50px;
+	
+	
+	
+
+}
+.elemSubmenu>a{
+
+	font-family: "Flamenco", system-ui;
+	color: #99525E;
+	text-decoration: none;
+	transition-duration: 0.4s ;
+	transition-property: color;
+	
+
+}
+.elemSubmenu>a:hover{
+	color: lightgrey;
+}
+.elementoMenu:hover #submenu {
+	display: block;
+}
+
+@keyframes tituloFundido{
+
+	0% { opacity: 0; top: 150px; }
+	50% { opacity: 1; top: 150px; }
+	100% { opacity: 1; top:290px; }
+
+}
+
+@keyframes subtituloFundido{
+
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 1; }
+
+}
+
+
+/* Aqui se acaba el encabezado*/
+/* -------------------------------------------QUIENSOMOS------------------------------------------- */
+/*comenzamos con la seccion de Quien somos*/
+
+#quienSomos{
+
+	height: 950px;
+	width: 100%;
+	background-color: #FEF5DE;
+	overflow: hidden;
+	background-image: url("../Imagenes/FondoQuienSomos.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#tituloQuienSomos{
+	font-family: "Lobster", sans-serif;
+	font-size: 3rem;
+	color: #464646;
+	background-color: #F9EBC7;
+	text-align: center;
+	margin-top: 185px;
+
+}
+ /*Aqui aprovecho para dar una class a los titulos, unos tendran un background claro y otro oscuro*/
+.tituloSeccionOscuro{
+	font-family: "Lobster", sans-serif;
+	font-size: 3rem;
+	color: #464646;
+	background-color: #F9EBC7;
+	text-align: center;
+	margin-top: 150px;
+
+}
+
+.tituloSeccionClaro{
+	font-family: "Lobster", sans-serif;
+	font-size: 3rem;
+	color: #464646;
+	background-color: #FEF5DE;
+	text-align: center;
+	margin-top: 150px;
+
+}
+
+#contenedorQuien{
+
+	width: 1200px;
+	height: 300px;
+	margin-right: auto; /*para centrar automaticamente*/
+	margin-left: auto; /*para centrar automaticamente*/
+	/*background-color: #722F37;*/
+	margin-top: 185px;
+	overflow: hidden; /*todos los contenedores tendran este atributo para que no arrastre el fondo con el formateo de los titulos*/
+}
+
+.colQuien{
+
+	width: 50%;
+	height: 300px;
+	/*background-color: #722F37;*/
+	/*border-style: solid;*/
+	float: left;
+}
+
+.colQuien >p {
+
+	font-family: "Asap", sans-serif;
+	text-align: center;
+	font-size: 1.5rem;
+	padding-left: 60px;
+	padding-top: 75px;
+}
+
+#videoQuien{
+
+	width: calc(100% - 60px);
+	height: 300px;
+	margin-right: 60px;
+	background-color: #F9EBC7;
+	
+}
+/* -------------------------------------------TIPOFLORES------------------------------------------- */
+/*empezamos la seccion de tipo de flores*/
+#tipoFlores{
+
+	height: 950px;
+	width: 100%;
+	background-color: #F9EBC7;
+	overflow: hidden;
+	background-image: url("../Imagenes/FondoTipoFlores.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contenedorTipoFlores{
+
+	width: 1200px;
+	height: 450px;
+	margin-right: auto;
+	margin-left: auto;
+	/*background-color: #722F37;*/
+	margin-top: 150px;
+	overflow: hidden;
+}
+
+.colTipoFlores {
+
+	width: calc(100%/3);
+	height: 450px;
+	/*background-color: lightgreen;*/
+	/*border-style: solid;*/
+	float: left; /*este atributo es para que en html se lea de izquiera a derecha en vez de arriba a abajo*/
+
+}
+
+.tituloTipo{
+	font-family: "Flamenco", system-ui;
+	color:#99525E;
+	font-size: 2rem;
+	text-decoration: underline; /*para dar formato subrayado al texto*/
+	/*background-color: lightblue;*/
+	text-align:center; /*alinear al centro*/
+	
+
+}
+/*aqui daremos un formato para los textos que quiera bajar y dar forma de triangulo*/
+.formatoBajo{
+	padding-top: 200px;
+}
+
+.textoTipoFlores{
+	font-family: "Asap", sans-serif;
+	font-size: 1.5rem;
+	color: #707070;
+	text-align:center;
+	margin-top: 15px;
+}
+/* -------------------------------------------GALERIA------------------------------------------- */
+/* Comenzamos la seccion de galeria */
+#galeria{
+
+	height: 1220px;
+	width: 100%;
+	background-color: #FEF5DE;
+	overflow: hidden;
+}
+
+#contenedorGaleria{
+
+	width: 1270px;
+	height: 780px;
+	margin-right: auto;
+	margin-left: auto;
+	/*background-color: #722F37;*/
+	margin-top: 60px;
+	overflow: hidden;
+}
+/*formato de las columnas*/
+.colGaleria{
+
+	width: calc(100%/3);
+	height: 780px;
+	/*background-color: #722F37;*/
+	/*border-style: solid;*/
+	float: left;
+}
+.colGaleria img{
+	width: 340px;
+}
+/*para dar formatos diferentes dentros de las columnas creo unas filas con diferentes proporciones*/
+.filaLarga{
+
+	width: 100%;
+	height: 490px;
+	margin-left: 50px;
+	
+
+}
+
+.filaCorta{
+
+	width: 100%;
+	height: 290px;
+	margin-left: 50px;
+	
+}
+/*tambien creo unas imagenes con diferentes proporciones para incluirlas en las filas*/
+.imgLarga{
+
+	width: 340px;
+	height: 470px;
+	
+	
+	
+	
+}
+
+.imgCorta{
+
+	width: 340px;
+	height: 270px;
+
+	
+	
+	
+	
+}
+/*formato del lightBox*/
+#modalLightBoxG{
+	/*vw y vh para darle el ancho y alto total de su ventana*/
+	width: 100vw; 
+	height: 100vh;
+	background-color: rgba(0,0,0,0.6);
+	position:fixed;
+	display: none;
+	top:0;
+	z-index: 5;
+	animation-name: fadeIn;
+	animation-duration: 0.5s;
+}
+@keyframes fadeIn{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+#imageToShow{
+	width: 80vw;
+	height: 864px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.imageLB{
+	margin-top: 10px;
+	width: auto;
+	height: 100%;
+	border-radius:25px;
+	transition-duration:0.3s;
+}
+.imageLB:hover {
+	box-shadow: 0px 0px 7px 4px rgba(24, 14, 14, 0.75);
+	cursor: pointer;
+}
+
+.lbButtons{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+
+	transform: translateY(-50%);
+	background-color: #F9EBC7;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #E8C39E;
+}
+.lbButtons:hover{
+	border-color:#707070;
+	cursor: pointer;
+}
+
+.lbRight{
+	right:30px;
+}
+.lbLeft{
+	left:30px;
+}
+.lbButtons i {
+	font-size: 3rem;
+	color:#E8C39E;
+}
+.lbButtons:hover i {
+	color:#707070;
+	
+}
+/* -------------------------------------------  CARTA  ------------------------------------------- */
+/* Comenzamos la seccion de la carta */
+#carta{
+
+	height: 1145px;
+	width: 100%;
+	background-color: #F9EBC7;
+	overflow: hidden;
+}
+/*Este contenedor sera el encargado de dar un formato de color diferente al centro de la seccion de la carta*/
+#contenedorFondoCarta{
+	width: 1560px;
+	height: 1070px;
+	background-color: #FEF5DE;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 75px;
+
+}
+
+#contenedorPestana{
+
+	width: 600px;
+	height: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	/*background-color: #722F37;*/
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+
+.etiquetaPestana{
+
+	font-family: "Flamenco", system-ui;
+	width: calc(33.33% - 20px);
+	height: 40px;
+	font-size: 2rem;
+	/*background-color: #722F37;*/
+	/*border-style: solid;*/
+	float: left;
+	text-align: center;
+	transition-property: color, font-size;
+	transition-duration: 0.5s;
+	padding-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	
+
+}
+.etiquetaPestana:hover{
+	color:#99525E;
+	font-size: 2.25rem;
+	cursor:pointer;
+
+}
+.pestanaActiva{
+
+	color:#99525E;
+	border-bottom-style: solid;
+
+}
+
+
+.contenedorFloresCarta{
+
+	width: 1410px;
+	height: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 60px;
+	display: none;
+
+
+}
+
+.flor{
+
+	width: calc(100%/3 - 210px);
+	height: 50%;
+	float: left;
+	margin-left: 105px;
+	margin-right: 105px;
+	overflow: hidden;
+	
+}
+
+@keyframes animFlor {
+	from {transform: scale(0.25,0.25); };
+	to {transform: scale(1,1);};
+}
+
+.florAnimada{
+	animation-name: animFlor;
+	animation-duration: 1.5s;
+}
+
+.imagenFlor{
+
+	width: 100%;
+	height: 77.14%;
+	overflow:hidden; 
+	transition-duration: 0.4s;
+	border-radius:10px;
+}
+.imagenFlor:hover{
+
+	transform: scale(1.1,1.1);
+	overflow: hidden;
+	height: 260px;
+	border-radius:110px;
+	
+	
+}
+
+.imagenFlor img{
+	width: 100%;
+	height: 100%;
+}
+
+.nombreFlor{
+	font-family: "Asap", sans-serif;
+	margin-top: 10px;
+	text-align: center;
+
+}
+
+.precio{
+	font-family: "Asap", sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+/* -------------------------------------------  PEDIDO  ------------------------------------------- */
+/* Comenzamos la seccion del pedido */
+#pedido{
+	height: 950px;
+	width: 100%;
+	background-color: #FEF5DE;
+	overflow: hidden;
+	background-image: url("../Imagenes/FondoPedido.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contenedorPedido{
+
+	height: 485px;
+	width: 1200px;
+	/*background-color: lightgreen;*/
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+.imagenPedido{
+
+	height: 100%;
+	width: 380px;
+	background-color: #722F37;
+	/*border-style: solid;*/
+	float:left;
+}
+
+#formulario{
+
+	height: 365px;
+	width: 505px;
+	float: left;
+	margin-top: 60px;
+	margin-left: 315px;
+}
+
+#textoDatosEnvio{
+	font-family: "Asap", sans-serif;
+	font-size: 1.5rem;
+}
+/*inputs para meter los datos de envio*/
+input {
+	display: block; /*para que se muestre uno debajo del otro*/
+	margin-top: 30px;
+	width: 485px;
+	height: 35px;
+	border-radius: 10px;
+	transition-duration: 0.20s;
+}
+input:hover{
+	border-style: solid;
+	border-color: #464646;
+}
+
+#botonEnviar{
+
+	border-style: none;
+	width: 120px;
+	height: 40px;
+	font-size: 1.5rem;
+	color: white;
+	background-color: #99525E;
+	transition-property: border-style, border-color, color, background-color;
+	transition-duration: 0.4s;
+	text-align: center;
+}
+#botonEnviar:hover{
+	border-style: solid;
+	border-color: #E8C39E;
+	color: #E8C39E;
+	background-color: #722F37; 
+	cursor: pointer;
+}
+
+#modalEnvio{
+	/*vw y vh para darle el ancho y alto total de su ventana*/
+	width: 100vw; 
+	height: 100vh;
+	background-color: rgba(0,0,0,0.6);
+	position:fixed;
+	top: 0px;
+	display: none;
+	z-index: 5;
+}
+
+#modaleBoxR{
+	width: 800px;
+	height: 325px;
+	background-color: lightgrey;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding: 50px;
+	text-align: center;
+	border-radius:25px;
+}
+#modaleBoxR>h1{
+	font-size: 3rem;
+	font-family: "Lobster", sans-serif;
+	font-weight: normal;
+	color: grey;
+	margin-top: 30px;
+}
+
+#modaleBoxR>p{
+	font-size: 1rem;
+	font-family: "Asap", sans-serif;
+	color: grey;
+	margin-top: 30px;
+}
+
+#modaleBoxR>button {
+	font-family: "Lobster", sans-serif;
+	font-size: 1.5rem;
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-top: 20px;
+	background-color: grey;
+	color: lightgrey;
+	transition-duration: 0.4s;
+}
+
+#modaleBoxR>button:hover {
+	
+	color: grey;
+	background-color: #F9EBC7; 
+	cursor: pointer;
+}
+/* -------------------------------------------PIEDEPAGINA------------------------------------------- */
+/* Comenzaremos la seccion del pie de pagina */
+#pie {
+	padding: 5px;
+	text-align: center;
+	background-color: #E8C39E;
+	
+}
+
+#pie i {
+	font-size: 35px;
+	margin: 0 30px;
+	color: #FEF5DE;
+	transition-property: color;
+	transition-duration: 0.4s;
+}
+
+#pie i:hover{
+	color: #99525E;
+	cursor: pointer;
+}
+
+
+ 

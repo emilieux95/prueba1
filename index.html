@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flora nature <3</title>
+	<link rel="stylesheet" href="CSS/Style.css">
+	<!--Aqui meteremos el codigo concreto para las 3 tipos de fuentes que utilizare
+	 que seran Flamenco, asap, y lobster -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Flamenco&family=Lobster&family=Madimi+One&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/e5f4132a52.js" crossorigin="anonymous"></script>
+	<script src="JS/Scripts.js"></script>
+	<!-- precarga de imagenes -->
+	<link rel="preload" as="image" href="Imagenes/HeroImage.png">
+	<link rel="preload" as="image" href="Imagenes/Slideshow2.png">
+	<link rel="preload" as="image" href="Imagenes/Slideshow3.png">
+	<!-- enlaces a la biblioteca de AOS scroll library -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<!-- -----------------------------------  B O D Y  ----------------------------------- -->
+<body>
+	<!-- aqui empieza el modal de bienvenida -->
+	<div id="modalBienvenida">
+		<div id="modaleBoxB">
+			<h1>Bienvenidos a la web de Flora Nature</h1>
+			<button onclick="cerrarMB()">Empieza</button>
+		</div>
+	</div>
+<!-- -----------------------------------  ENCABEZADO  ----------------------------------- -->
+<!-- Comenzamos en el encabezado -->
+	<header id="encabezado">
+		<div class="fondoSlide" id="fondoSlide1"></div>
+		<div class="fondoSlide" id="fondoSlide2"></div>
+		<div class="fondoSlide" id="fondoSlide3"></div>
+		<!--empezamos en menu horizontal-->
+		<nav id="navbar">
+			<!-- hacemos un enlace para que redirija al encabezado cuando se clicke en el logo -->
+			<a href="#encabezado">
+				<img id="logo"  src="Imagenes/LOGO.png" alt="">
+			</a>
+			<ul id="menu">
+				<!-- referenciado de cada seccion cuando se clicka en algunos elementos del menu -->
+				<li class="elementoMenu"><a href="#encabezado">Inicio</a></li>
+				<li class="elementoMenu"><a href="#quienSomos">Quién somos</a></li>
+				<li class="elementoMenu"><a href="#tipoFlores">Tipos de Flores</a></li>
+				<li class="elementoMenu"><a href="#galeria">Galería</a></li>
+				<li class="elementoMenu"><a href="#carta">Carta</a>
+					<ul id="submenu">
+						<li class="elemSubmenu"><a href="#carta" onclick="marcarPestana('cartaNatural','tabNatural')">Naturales</a></li>
+						<li class="elemSubmenu"><a href="#carta" onclick="marcarPestana('cartaPreservada','tabPreservada')">Preservadas</a></li>
+						<li class="elemSubmenu"><a href="#carta" onclick="marcarPestana('cartaSeca','tabSeca')">Secas</a></li>
+					</ul>
+				</li>
+				<li class="elementoMenu"><a href="#pedido">Pedido</a></li>
+			</ul>
+		</nav>
+		<!-- titulo y subtitulo -->
+		<h1 id="tituloEncabezado">Flora Nature</h1>
+		<h4 id="subtituloEncabezado">Preservamos momentos con flores eternas</h4>
+
+
+	</header>
+	<!-- -----------------------------------  QUIENSOMOS  ----------------------------------- -->
+	<!-- seccion de Quien somos -->
+	<section id="quienSomos">
+		
+		<h2 id="tituloQuienSomos" data-aos="fade-up">Quién Somos</h2>
+		<div id="contenedorQuien">
+			<!-- creamos 2 columnas, 1 con el video y otra con la descripcion -->
+			<div class="colQuien" data-aos="fade-right" data-aos-duration="1500">
+				<video src="Imagenes/VideoQuienSomos.mp4" id="videoQuien" controls autoplay></video>
+			</div>
+			<div class="colQuien" data-aos="fade-left" data-aos-duration="1500">
+				<p>Lorem ipsum dolor sit amet, consectetur 
+				adipiscing elit, sed do eiusmod tempor 
+				incididunt ut labore et dolore magna aliqua. 
+				Ut enim ad minim veniam, quis nostrud exercitation
+ 				ullamco laboris nisi ut aliquip ex ea commodo consequat
+ 				</p>
+			</div>
+		</div>
+	</section>
+	<!-- -----------------------------------  TIPOFLORES  ----------------------------------- -->
+	<!-- Seccion de tipo de Flores -->
+	<section id="tipoFlores">
+		<h2 class="tituloSeccionClaro" data-aos="fade-up">Tipos de Flores</h2>
+		<div id="contenedorTipoFlores">
+			<!-- aqui tendremos 3 columnas con 3 textos diferentes para explicar los 3 tipos de flores -->
+			<div class="colTipoFlores formatoBajo" data-aos="zoom-in-right" data-aos-duration="1500"><h4 class="tituloTipo">Flores Naturales</h4><p class="textoTipoFlores">Lorem ipsum dolor sit amet, consectetur 
+			adipiscing elit, sed do eiusmod tempor 
+			incididunt ut labore et dolore magna aliqua. 
+			Ut enim ad minim veniam, quis nostrud fi the lo</p></div>
+			<div class="colTipoFlores" data-aos="zoom-in-down" data-aos-duration="1500"><h4 class="tituloTipo">Flores Preservadas</h4><p class="textoTipoFlores">Lorem ipsum dolor sit amet, consectetur 
+			adipiscing elit, sed do eiusmod tempor 
+			incididunt ut labore et dolore magna aliqua. 
+			Ut enim ad minim veniam, quis nostrud fi the lo</p></div>
+			<div class="colTipoFlores formatoBajo" data-aos="zoom-in-left" data-aos-duration="1500"><h4 class="tituloTipo">Flores Secas</h4><p class="textoTipoFlores">Lorem ipsum dolor sit amet, consectetur 
+			adipiscing elit, sed do eiusmod tempor 
+			incididunt ut labore et dolore magna aliqua. 
+			Ut enim ad minim veniam, quis nostrud fi the lo</p></div>
+		</div>
+
+	</section>
+	<!-- -----------------------------------  GALERIA  ----------------------------------- -->
+	<!-- Seccion Galeria -->
+	<section id="galeria">
+		<h2 class="tituloSeccionOscuro" data-aos="fade-up">Galería</h2>
+		<div id="contenedorGaleria">
+			<!-- Tendremos 3 columnas de imagenes que cada una de ellas contendra 2 filas para ajustar los tamaños -->
+			<div class="colGaleria">
+
+				<div class="filaCorta"><div class="imgCorta" data-aos="fade-down" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB1.jpg">
+				</div></div>
+				<div class="filaLarga"><div class="imgLarga" data-aos="fade-up" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB2.jpg">
+				</div></div>
+
+			</div>
+			<div class="colGaleria">
+				
+				<div class="filaLarga"><div class="imgLarga" data-aos="fade-down" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB3.jpg" alt="">
+				</div></div>
+				<div class="filaCorta"><div class="imgCorta" data-aos="fade-up" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB4.jpg" alt="">
+				</div></div>
+
+			</div>
+			<div class="colGaleria" data-aos="fade-left">
+				
+				<div class="filaCorta"><div class="imgCorta" data-aos="fade-down" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB5.jpg" alt="">
+				</div></div>
+				<div class="filaLarga"><div class="imgLarga" data-aos="fade-up" data-aos-duration="2000">
+					<img class= 'imageLB'src="Imagenes/Galeria/LB6.jpg" alt="">
+				</div></div>
+
+			</div>
+
+		</div>
+		<div id="modalLightBoxG">
+			<div id="imageToShow">
+			</div>
+			<button class="lbButtons lbRight" onclick="nextImg()"><i class="fa-solid fa-angle-right"></i></button>
+			<button class="lbButtons lbLeft" onclick="prevImg()"><i class="fa-solid fa-angle-left"></i></button>
+		</div>
+		
+	</section>
+	<!-- ----------------------------------------  CARTA  ---------------------------------------- -->
+	<!-- Seccion carta -->
+	<section id="carta">
+		<!-- Aqui abarcaremos toda la seccion con un contenedor de fondo para darle estilo al fondo -->
+		<div id="contenedorFondoCarta">
+			<h2 class="tituloSeccionOscuro" data-aos="fade-up">Carta</h2>
+			<!-- Aqui meteremos las pestanas de los tipo de flores  -->
+			<div id="contenedorPestana">
+				<p id="tabNatural" class="etiquetaPestana" onclick="marcarPestana('cartaNatural','tabNatural')">Naturales</p>
+				<p id="tabPreservada" class="etiquetaPestana" onclick="marcarPestana('cartaPreservada','tabPreservada')">Preservadas</p>
+				<p id="tabSeca" class="etiquetaPestana" onclick="marcarPestana('cartaSeca','tabSeca')">Secas</p>
+			</div>
+			<!-- Aqui tendremos el contenedor que contendra el contenido de la carta con su imagen, nombre y precio -->
+			<div class="contenedorFloresCarta" id="cartaNatural">
+			
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-1.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-2.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-3.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-4.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-5.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/natural-6.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+			</div>
+			<div class="contenedorFloresCarta" id="cartaPreservada">
+			
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-1.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-2.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-3.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-4.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-5.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/preservada-6.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+			</div>
+			<div class="contenedorFloresCarta" id="cartaSeca">
+			
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-1.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-2.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-3.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-4.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-5.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+				<div class="flor">
+					<div class="imagenFlor"><img src="Imagenes/Carta/seca-6.png" alt=""></div>
+					<p class="nombreFlor">NOMBRE</p>
+					<p class="precio">PRECIO</p>
+				</div>
+
+			</div>
+		</div>	
+	</section>
+	<!-- -------------------------------------  PEDIDO  ------------------------------------- -->
+	<!-- Seccion pedido -->
+	<section id="pedido">
+		<h2 class="tituloSeccionClaro" data-aos="fade-up">Pedido</h2>
+		<!-- Aqui estara el con requiredtenido del pedido con una imagen lateral y un formulario a su derecha con sus inputs para recoger los datos de envio -->
+		<div id="contenedorPedido">
+			<img class="imagenPedido" src="Imagenes/ImgPedido.png" alt="" data-aos="fade-down"
+			data-aos-easing="linear"
+			data-aos-duration="1500">
+			<form action="" id="formulario">
+				
+				<p id="textoDatosEnvio" data-aos="fade-up">Datos de Envio</p>
+				<input id="formNombre" type="text" name="Nombre" placeholder="Nombre y Apellidos" required>
+				<input id="formDireccion" type="text" name="Direccion" placeholder="Direccion de Envio">
+				<input id="formEmail" type="email" name="Correo electronico" placeholder="Correo electronico" required>
+				<input id="formTelefono" type="number" name="Telefono" placeholder="Numero de telefono" required>
+				<input id="botonEnviar" onclick="modalEnvio()" value="Enviar">
+			</form>
+		</div>
+	</section>
+
+	<div id="modalEnvio">
+		<div id="modaleBoxR">
+			<h1>Mensaje de confirmacion de Envio</h1>
+			<p id="mensajeEnvio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, impedit.</p>
+			<button onclick="cerrarME()">Confirma</button>
+		</div>
+	</div>
+	<!-- -----------------------------------  PIEPAGINA  ----------------------------------- -->
+
+	<!-- pie de pagina con 3 imagenes de redes sociales para mas informacion -->
+	<footer id="pie">
+		
+		<i class="fab fa-facebook-f"></i>
+		<i class="fab fa-instagram"></i>
+		<i class="fab fa-twitter"></i>
+	</footer>
+
+	<script>
+		pestanaPorDefecto();
+		modalBienvenida();
+		// ejecutamos con setInterval para que se ejecute cada cierto tiempo, 3000 milisegundos 3 seg
+		setInterval(slideShowAnim, 4000);
+		readyLightBox();
+
+	</script>
+	<!-- Inicializacion de la libreria AOS -->
+	<script>
+		AOS.init();
+	</script>
+
+
+
+	
+</body>
+</html> 
